@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container">
+
+    <h3>Lista De Personas</h3>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="nuevaPersona()">Nueva Persona</button>
+    
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Identificador</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">NumeroIdentificacion</th>
+        <th scope="col">Email</th>
+        <th scope="col">TipoIdentificacion</th>
+        <th scope="col">FechaDeCreacion</th>
+        <th scope="col">TipoConIdentificacion</th>
+        <th scope="col">NombreCompleto</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas" (click)="editarPersona(persona.identificador)">
+        <th scope="row">{{persona.identificador}}</th>
+        <td>{{persona.nombres}}</td>
+        <td>{{persona.apellidos}}</td>
+        <td>{{persona.numeroIdentificacion}}</td>
+        <td>{{persona.email}}</td>
+        <td>{{persona.tipoIdentificacion}}</td>
+        <td>{{persona.fechaDeCreacion}}</td>
+        <td>{{persona.tipoConIdentificacion}}</td>
+        <td>{{persona.nombreCompleto}}</td>
+        <td>{{persona.estado}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<app-footer></app-footer>
